@@ -17,6 +17,7 @@ DRAFT: {draft}
     YOUR {length} {content_type} RESPONSE:
 """
 with col3:
+    st.markdown("### Configuration Hyperperameters")
     # Models for /v1/chat/completions - https://platform.openai.com/docs/models/model-endpoint-compatibility
     user_model = st.selectbox('model', ("gpt-4", "gpt-4-0314", "gpt-4-32k", "gpt-4-32k-0314", "gpt-3.5-turbo", "gpt-3.5-turbo-0301"), 4)
     user_max_tokens = st.slider('tokens', 42, 4000, 333, 100)
