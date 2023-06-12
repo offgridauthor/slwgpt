@@ -53,7 +53,7 @@ def load_LLM(openai_api_key):
 ## --- TODO allow selecting gptmodel (need to set different endpoint to do this(ie v1/chat/completions rather than v1/completions))
 
 with col1:
-    st.markdown("Source")
+    st.markdown("### Input")
     def get_text():
         input_text = st.text_area(label="Input", label_visibility='collapsed', placeholder="In a hole in the ground...", key="draft_input")
         return input_text
@@ -65,6 +65,7 @@ with col1:
         st.stop()
     
 with col2:
+    st.markdown("### Instructions")
     option_content_type = st.selectbox(
         'content type',
         ('blog', 'tweet'))
@@ -73,7 +74,7 @@ with col2:
     option_audience=st.text_input("who is your audience?", "web3 developers")
     option_versions=st.slider('versions', 1, 20, 1)
 with col1:
-    st.markdown("### Result:")
+    st.markdown("### Output")
 
 if draft_input:
     if not openai_api_key:
